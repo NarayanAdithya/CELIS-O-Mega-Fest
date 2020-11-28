@@ -1,4 +1,4 @@
-from app import app
+from app import app,socketio
 from flask import request,redirect,url_for,render_template,flash,get_flashed_messages
 
 
