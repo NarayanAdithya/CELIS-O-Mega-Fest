@@ -1,0 +1,125 @@
+{% extends 'template.html' %}
+        <!--Carousel-->
+{% block body %}
+<br>
+<div style="max-width: 100%;
+    overflow-x: hidden;">
+<div>
+  <div class="intro-section" id="home-section">
+      
+      <div class="slide-1" style="background-image: url('../static/images/home/home.jpg');" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                  <h1 data-aos="fade-side" data-aos-delay="100">Learn From The Expert</h1>
+                  <img src="../static/images/home/celislogo.png" width="300" height="150" data-aos="fade-up" data-aos-delay="100">
+                  <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">We bring to you a unique experience of a Centralised E-Learning Information System only here at <a class="text-info">CELIS</a>. Fasten your seatlbelts as we are about to skydive through the world of Learning!!</p>
+                  <p data-aos="fade-up" data-aos-delay="300"><a href="{{url_for('contactus')}}" class="btn btn-primary py-3 px-5 btn-pill">Contact Now</a></p>
+
+                </div>
+
+                <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                  <img src="https://demo.themezy.com/system/resources/demo_themes/000/000/017//dummy/kid@2x.png" alt="" draggable="false" width="458" height="467"  style="border-radius: 0 0 50% 50%;">
+
+                </div>-->
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ 
+
+
+
+ <div class="site-section courses-title" id="courses-section" style="margin-bottom: -50px;">
+      <div class="container">
+        <div class=" justify-content-center">
+          <div class=" text-center" data-aos="fade-up" data-aos-delay="">
+            <h2 class="section-title">About Us!</h2>
+            
+            
+            <p style="color: white;  font-size: 25px;">We are a team of 3 students, truly motivated to work in the field of computers and is willing to serve those who seek and cherish knowledge. We are whole-heartedly and 
+              deeply looking forward for people to communicate with us. We have provided
+              our communication details as well as Social media handles of the team for you to contact us. Feel free
+              to contact us anytime without reluctance!</p>
+          </div>
+          <br>
+          <div class="row justify-content-center" style="margin-left: 100px; font-weight: bold;" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-12 col-md-4 py-2" style="text-align: center;">
+            <img src="../static/images/home/19BBS0068.jpg" class="rounded-circle" class="justify-content-center" style=" width: 200px; height: 100px;">
+            <p >Adithya Narayan</p>
+          </div>
+          <div class="col-12 col-md-4 py-2" style="text-align: center;">
+            <img src="../static/images/home/19BBS0023.jpg" class="rounded-circle" class="justify-content-center" style=" width: 200px; height: 100px;">
+            <p >Aravind Harinarayanan</p>
+          
+          </div>
+          <div class="col-12 col-md-4 py-2" style="text-align: center;">
+            <img src="../static/images/home/Sonu.JPG" class="rounded-circle" class="justify-content-center" style=" width: 200px; height: 100px;">
+            <p>Sonus Vareed</p>
+          </div>
+          <p style="text-align: center;">Undergraduate Students at Vellore Institute of Technology, Vellore.</p>
+        </div>
+        </div>
+      </div>
+</div>
+<div class="site-section" id="programs-section">
+      <div class="container">
+        
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <img src="../static/images/home/Home_2.png" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">We Are Excellent In Education!</h2>
+            <p class="mb-4">We provide to you a unique, never before experience of E-Learning here at CELIS. </p>
+
+            <div class="d-flex align-items-center custom-icon-wrap mb-3">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+              <div><h3 class="m-0">More than hundreds of courses.</h3></div>
+            </div>
+
+            <div class="d-flex align-items-center custom-icon-wrap">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+              <div><h3 class="m-0">Domain-based discussion forums.</h3></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <img src="../static/images/home/Home_1.png" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">Strive for the Best!</h2>
+            <p class="mb-4">Here, at CELIS we nurture everyone with utmost perfection.</p>
+
+            <div class="d-flex align-items-center custom-icon-wrap mb-3">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+              <div><h3 class="m-0">Domain-based course selection.</h3></div>
+            </div>
+
+            <div class="d-flex align-items-center custom-icon-wrap">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+              <div><h3 class="m-0">Instructors from around the globe.</h3></div>
+            </div>
+
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
