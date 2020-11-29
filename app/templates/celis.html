@@ -2,38 +2,29 @@
         <!--Carousel-->
 {% block body %}
 <br>
-<div style="
-    overflow-y: hidden;
+<div style="max-width: 100%;
     overflow-x: hidden;">
 <div>
   <div class="intro-section" id="home-section">
       
       <div class="slide-1" style="background-image: url('../static/images/home/home.jpg');" data-stellar-background-ratio="0.5">
-        <div>
+        <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
               <div class="row align-items-center">
-                <section id="hero" class="d-flex align-items-center" style="">
-
-    <div class="container-fluid" data-aos="fade-up">
-      <div class="row justify-content-center">
-        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-side" data-aos-delay="100">Learn From The Expert</h1>
+                <div class="col-lg-6 mb-4">
+                  <h1 data-aos="fade-side" data-aos-delay="100">Learn From The Expert</h1>
                   <img src="../static/images/home/celislogo.png" width="300" height="150" data-aos="fade-up" data-aos-delay="100">
-                  
-                  
-          <h2>Carry an exam board everyday since everyday is just another exam</h2>
-          <div><a href="{{url_for('contactus')}}" class="btn-get-started scrollto">Get Started</a></div>
-        </div>
-        <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-          <img src="../static/images/home/hero-img.png" class="img-fluid animated" alt="">
-        </div>
-      </div>
-    </div>
+                  <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">We bring to you a unique experience of a Centralised E-Learning Information System only here at <a class="text-info">CELIS</a>. Fasten your seatlbelts as we are about to skydive through the world of Learning!!</p>
+                  <p data-aos="fade-up" data-aos-delay="300"><a href="{{url_for('contactus')}}" class="btn btn-primary py-3 px-5 btn-pill">Contact Now</a></p>
 
-  </section>
+                </div>
 
-                    </div>
+                <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                  <img src="https://demo.themezy.com/system/resources/demo_themes/000/000/017//dummy/kid@2x.png" alt="" draggable="false" width="458" height="467"  style="border-radius: 0 0 50% 50%;">
+
+                </div>-->
+              </div>
             </div>
             
           </div>
@@ -45,239 +36,88 @@
 
 
 
-        <section id="services" data-aos="fade-up" data-aos-delay="200">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">Services</h2>
-                    <h3 class="text-muted section-subheading">We deliver you the perfect!</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-book fa-stack-1x fa-inverse"></i></span>
-                    <h4 class="section-heading">Courses</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fas fa-brain fa-stack-1x fa-inverse"></i></span>
-                    <h4 class="section-heading">Recommender System</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-wechat fa-stack-1x fa-inverse"></i></span>
-                    <h4 class="section-heading">Forum</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-            </div>
+ <div class="site-section courses-title" id="courses-section" style="margin-bottom: -50px;">
+      <div class="container">
+        <div class=" justify-content-center">
+          <div class=" text-center" data-aos="fade-up" data-aos-delay="">
+            <h2 class="section-title">About Us!</h2>
+            
+            
+            <p style="color: white;  font-size: 25px;">We are a team of 3 students, truly motivated to work in the field of computers and is willing to serve those who seek and cherish knowledge. We are whole-heartedly and 
+              deeply looking forward for people to communicate with us. We have provided
+              our communication details as well as Social media handles of the team for you to contact us. Feel free
+              to contact us anytime without reluctance!</p>
+          </div>
+          <br>
+          <div class="row justify-content-center" style="margin-left: 100px; font-weight: bold;" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-12 col-md-4 py-2" style="text-align: center;">
+            <img src="../static/images/home/19BBS0068.jpg" class="rounded-circle" class="justify-content-center" style=" width: 200px; height: 100px;">
+            <p >Adithya Narayan</p>
+          </div>
+          <div class="col-12 col-md-4 py-2" style="text-align: center;">
+            <img src="../static/images/home/19BBS0023.jpg" class="rounded-circle" class="justify-content-center" style=" width: 200px; height: 100px;">
+            <p >Aravind Harinarayanan</p>
+          
+          </div>
+          <div class="col-12 col-md-4 py-2" style="text-align: center;">
+            <img src="../static/images/home/Sonu.JPG" class="rounded-circle" class="justify-content-center" style=" width: 200px; height: 100px;">
+            <p>Sonus Vareed</p>
+          </div>
+          <p style="text-align: center;">Undergraduate Students at Vellore Institute of Technology, Vellore.</p>
         </div>
-    </section>
-    <section id="portfolio" class="bg-light" style="background-image:url('../static/images/home/bg-01.jpg')" data-aos="fade-up" data-aos-delay="200">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">Explore</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="static/assets/img/Home_1.png"></a>
-                    <div class="portfolio-caption">
-                        <h4>Courses</h4>
-                        <p class="text-muted">More than 500 E-courses</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="static/assets/img/Home_2.png"></a>
-                    <div class="portfolio-caption">
-                        <h4>Recommendations</h4>
-                        <p class="text-muted">Find the right course for you</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="static/assets/img/Home_1.png
-                        "></a>
-                    <div class="portfolio-caption">
-                        <h4>Discussions</h4>
-                        <p class="text-muted">Domain based Discussion Forums</p>
-                    </div>
-                </div>
-                            </div>
         </div>
-    </section>
+      </div>
+</div>
+<div class="site-section" id="programs-section">
+      <div class="container">
+        
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <img src="../static/images/home/Home_2.png" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">We Are Excellent In Education!</h2>
+            <p class="mb-4">We provide to you a unique, never before experience of E-Learning here at CELIS. </p>
+
+            <div class="d-flex align-items-center custom-icon-wrap mb-3">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+              <div><h3 class="m-0">More than hundreds of courses.</h3></div>
+            </div>
+
+            <div class="d-flex align-items-center custom-icon-wrap">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+              <div><h3 class="m-0">Domain-based discussion forums.</h3></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <img src="../static/images/home/Home_1.png" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">Strive for the Best!</h2>
+            <p class="mb-4">Here, at CELIS we nurture everyone with utmost perfection.</p>
+
+            <div class="d-flex align-items-center custom-icon-wrap mb-3">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
+              <div><h3 class="m-0">Domain-based course selection.</h3></div>
+            </div>
+
+            <div class="d-flex align-items-center custom-icon-wrap">
+              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
+              <div><h3 class="m-0">Instructors from around the globe.</h3></div>
+            </div>
+
+          </div>
+        </div>
 
         
 
       </div>
     </div>
-    
-    <section id="team" class="bg-light" data-aos="fade-up" data-aos-delay="200">
-      <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase">About Us!</h2>
-                    <h3 class="text-muted section-subheading">We are a team of 3 students, truly motivated to work in the field of computers and is willing to serve those who seek and cherish knowledge. We are whole-heartedly and deeply looking forward for people to communicate with us. We have provided our communication details as well as Social media handles of the team for you to contact us. Feel free to contact us anytime without reluctance!</h3>
-                </div>
-            </div>
-                  </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member"><img class="rounded-circle mx-auto" src="static/assets/img/19BBS0068.jpg">
-                        <h4>Adithya Narayan</h4>
-                        <p class="text-muted">Lead Backend</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member"><img class="rounded-circle mx-auto" src="static/assets/img/19BBS0023.jpg">
-                        <h4>Aravind Harinarayanan</h4>
-                        <p class="text-muted">Lead Frontend</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member"><img class="rounded-circle mx-auto" src="static/assets/img/19BBS0011.jpg">
-                        <h4>Sonus Vareed</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact" style="background-image:url('static/assets/img/map-image.png');" data-aos="fade-up" data-aos-delay="200">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Contact us to know more!</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form id="contactForm" name="contactForm" novalidate="novalidate" action="/mailform" method="POST">
-                        <div class="form-row">
-                            <div class="col col-md-6">
-                                <div class="form-group"><input class="form-control" type="text" id="name" placeholder="Your Name *" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                <div class="form-group"><input class="form-control" type="email" id="email" placeholder="Your Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
-                                <div class="form-group"><input class="form-control" type="tel" placeholder="Your Phone *" required=""><small class="form-text text-danger help-block lead"></small></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group"><textarea class="form-control" id="message" placeholder="Your Message *" required=""></textarea><small class="form-text text-danger help-block lead"></small></div>
-                            </div>
-                            <div class="col">
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal1">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="static/assets/img/Home_1.png">
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae
-                                        cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-unstyled">
-                                        <li>Date: January 2017</li>
-                                        <li>Client: Threads</li>
-                                        <li>Category: Illustration</li>
-                                    </ul>
-                                    
-                                    
-                                    <a href="{{url_for('course')}}" class="btn btn-primary" type="button"><span>&nbsp;Explore </span></a>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close </span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal2">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="static/assets/img/recommendations.jpg">
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae
-                                        cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-unstyled">
-                                        <li>Date: January 2017</li>
-                                        <li>Client: Threads</li>
-                                        <li>Category: Illustration</li>
-                                    </ul>
-                                    <a href="{{url_for('course')}}" class="btn btn-primary" type="button"><span>&nbsp;Explore </span></a>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal3">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="static/assets/img/community-forum-2.jpg">
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae
-                                        cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-unstyled">
-                                        <li>Date: January 2017</li>
-                                        <li>Client: Threads</li>
-                                        <li>Category: Illustration</li>
-                                    </ul>
-                                    <a href="{{url_for('course')}}" class="btn btn-primary" type="button"><span>&nbsp;Explore </span></a>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
 
 </div>
 
