@@ -1,6 +1,6 @@
 
 ![TmAP8n236xqh75Q.png](https://i.loli.net/2020/07/13/OiwrC2KRZNPA9cJ.png)
-### <h2>Hello🙏🏻, We are Team Targaryen!
+### <h2>Hello🙏🏻, We are Team DRACARYS!
   </br>
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em>We are a team and like to work in a team!!</em> 
