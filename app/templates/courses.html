@@ -7,9 +7,12 @@
     <br>
     <h1><u>Enroll in  Courses  by Independent Creators</u></h1>
     <br>
-    <div>
-        {% for course in courses %}
-        <div class="card" data-aos="flip-right" data-aos-delay="100">
+    <div class="row">
+      {% for course in courses %}
+       <div class="col-lg-3">
+        <div>
+        <div class="card w-100" data-aos="flip-right" data-aos-delay="100" style="height: 100%;">
+          <img src="../static/images/home/home.jpg" class="card-img-top">
           <h5 class="card-header">{{course.course_code}}</h5>
           <div class="card-body">
         
@@ -20,9 +23,12 @@
    background-color: #51a351;">Check Out Course</a>
           </div>
         </div>
+        </div>
         <br>
-        {%endfor%}
+        
   </div>
+  {%endfor%}
+</div>
   <br>
   <br>
   <ul class="nav nav-tabs" id="myTab" role="tablist" style="font-weight: bold;">

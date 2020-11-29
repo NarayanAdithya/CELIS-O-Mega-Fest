@@ -1,12 +1,14 @@
 {% extends 'template.html' %}
 {% block body %}
+<div style="background-image: linear-gradient(lightgrey,white);" data-aos="fade-up" data-aos-delay="200">
 <div class="container">
     <br>
-<h2>{{course.Course_name}}</h2>
+    <br>
+<h2><u>{{course.Course_name}}</u></h2>
 <hr>
 <br>
 <br>
-<h4>Course Description:</h4>
+<h4 class="text-info">Course Description:</h4>
 <hr>
 <h5>{{course.Course_Description}}</h5>
 <br>
@@ -31,9 +33,7 @@
 {%endif%}
 {% endif%}
 </div>
-
-
-
-
-
+</div>
+<br>
+<br>
 {%endblock%}

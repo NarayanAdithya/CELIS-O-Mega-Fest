@@ -14,7 +14,7 @@ class RegisterForm(FlaskForm):
     user_role=RadioField('User Role',validators=[DataRequired()],choices=[('Student','Student'),('Instructor','Instructor')],render_kw={'class':'form-check form-check-input','style':'list-style:none;'})
     Region=SelectField('Select Region',validators=[(DataRequired())],choices=[('America','America'),('Africa','Africa'),('Asia','Asia'),('Europe','Europe')],render_kw={'class':'form-group col-md-4 form-control '})
     # remember_me=BooleanField('Keep Me Signed In')
-    submit=SubmitField('Sign In',render_kw={'class':'btn btn-primary btn-pill','style':'height : 50px;'})
+    submit=SubmitField('Sign In',render_kw={'class':'btn btn-info btn-pill','style':'height : 50px;'})
     def validate_username(self,username):
         user=User.query.filter_by(username=username.data).first()
         if user is not None:
@@ -27,7 +27,7 @@ class LoginForm(FlaskForm):
     email=EmailField('Email',validators=[DataRequired(),Email()],render_kw={'class':'form-control form-group'})
     password=PasswordField('Password',validators=[DataRequired()],render_kw={'class':'form-control form-group'})
     remember_me=BooleanField('Keep Me Signed In')
-    submit=SubmitField('Sign In',render_kw={'class':'btn btn-primary btn-pill','style':'height : 50px;'})
+    submit=SubmitField('Sign In',render_kw={'class':'btn btn-info btn-pill','style':'height : 50px;'})
 
 
 
@@ -36,7 +36,7 @@ class add_course_form(FlaskForm):
     Course_Name=StringField('Course Name',validators=[DataRequired(),Length(min=10,max=100)],render_kw={'class':'form-control form-group'})
     Course_description=TextAreaField('Enter Description',[DataRequired()],render_kw={'class':'form-control form-group'})
     resources_link=StringField('Resources Link',render_kw={'class':'form-control form-group'})
-    submit=SubmitField('Add Course',render_kw={'class':'btn btn-primary btn-pill','style':'height : 50px;'})
+    submit=SubmitField('Add Course',render_kw={'class':'btn btn-info btn-pill','style':'height : 50px;'})
     def validate_Course_Code(self,Course_Code):
         c=Courses.query.filter_by(course_code=Course_Code.data).first()
         if c is not None:

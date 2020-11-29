@@ -1,14 +1,16 @@
 {%extends 'template.html'%}
 {%block body%}
+<div style="background-image: linear-gradient(lightgrey,white);" data-aos="fade-up" data-aos-delay="200">
+  
 <br>
 <br>
 <div class="container">
-    <h1>Your Students for Course {{course.course_code}}</h1>
+    <h1><u>Your Students for Course {{course.course_code}}</u></h1>
 
 <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">Sn. No</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Region</th>
@@ -30,5 +32,8 @@
   
 
 </div>
+</div>
+<br>
+<br>
 
 {%endblock%}

@@ -1,5 +1,4 @@
-
-from app import app,forms,db,socketio
+from app import app,forms,db,socketio,mail
 from flask_socketio import emit,leave_room,join_room
 from flask import request,redirect,url_for,render_template,flash,get_flashed_messages,flash,jsonify
 from flask_login import current_user,login_user,logout_user,login_required
@@ -9,15 +8,24 @@ from werkzeug.urls import url_parse
 from wtforms.validators import ValidationError
 from datetime import datetime
 import pickle
-
-
-
-
+from flask_mail import Message
+from threading import Thread
+import pandas as pd
+import numpy as np
 
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template('celis.html',title='Home',data_footer_aos="fade-left",data_aos_footer_delay=100,data_aos_header="fade-left",data_header_aos_delay=100)
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('error404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('error500.html'), 500
 
 
 @app.route('/course/<course_code>/students')
@@ -104,14 +112,9 @@ def add_course():
     else:
         return redirect(url_for('profile',username=current_user.username))
 
-
-@app.route('/contact')
-@login_required
-def contactus():
-    return render_template('contactus.html',title='Contact Us')
-
-
-
+def send_async_email(app,msg):
+    with app.app_context():
+        mail.send(msg)
 
 
 @app.route('/courses')
@@ -125,6 +128,45 @@ def course():
     with open('app//webdev.pickle', 'rb') as handle:
         webdev_courses = pickle.load(handle)
     return render_template('courses.html',title='Courses',courses=c,ai=ai_courses,len_ai=len(ai_courses['Title']),web=webdev_courses,len_web=len(webdev_courses['Title']),app=appdev_courses,len_app=len(appdev_courses['Reviews']))
+
+
+@app.route('/recommend',methods=['POST','GET'])
+def recommend():
+    df=pd.read_csv('app//tag_gen.csv')
+    if request.method=='POST':
+        user_courses=[]
+        course1=request.form['course1']
+        user_courses.append(course1)
+        course2=request.form['course2']
+        user_courses.append(course2)
+        course3=request.form['course3']
+        user_courses.append(course3)
+        print(course1,course2,course3)
+        df['tags_str'] = [','.join(map(str, l)) for l in df['Tags_fin']]
+        course_tags_list=df[['Title','tags_str','Tags_fin']].copy()
+        model=pickle.load(open('app//recommender_model','rb'))
+        course_tags_vectors = model.docvecs.vectors_docs
+        user_course_vector = np.zeros(shape = course_tags_vectors.shape[1])
+        for course in user_courses:
+            course_index = df[df["Title"] == course].index.values[0]  
+            user_course_vector += course_tags_vectors[course_index]
+        user_course_vector /= len(user_courses)  
+        # print(user_course_vector)
+        #  find courses similar to user vector to generate course recommendations
+        sims = model.docvecs.most_similar(positive = [user_course_vector], topn = 30)
+        nu=[]
+        for i,j in sims:
+            print(i,j)
+            course_sim = course_tags_list.loc[int(i),'Title'].strip()
+            
+            if course_sim not in user_courses:
+                nu.append(int(i))
+                print(course_sim)
+        return render_template('recommender.html',options=df,indices=nu)
+
+    return render_template('recommender.html',options=df)
+    
+
 
 @app.route('/profile/<username>')
 @login_required
@@ -247,6 +289,25 @@ def forum_(thread_id):
         posts=post.query.filter_by(thread_id=thread_id).order_by(post.time.asc())
         thread_name=thread.query.filter_by(id=thread_id).first().subject
         return render_template('forum.html',title='Forum',posts=posts,room=thread_name)
+
+
+
+
+@app.route('/contact')
+@login_required
+def contactus():
+    return render_template('contactus.html',title='Contact Us')
+
+def send_reset_email(user):
+    token = user.get_reset_token()
+    msg = Message('Password Reset Request',
+                  sender="celis.students@gmail.com",
+                  recipients=[user.email])
+    msg.body = f'''To reset your password, visit the following link:
+{url_for('reset_token', token=token, _external=True)}
+If you did not make this request then simply ignore this email and no changes will be made.
+'''
+    mail.send(msg)
 
 @app.route("/reset_password", methods=['GET', 'POST'])
 def reset_request():

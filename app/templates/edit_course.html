@@ -1,10 +1,12 @@
 {% extends 'template.html' %}
 
 {% block body %}
+<div style="background-image: linear-gradient(lightgrey,white);" data-aos="fade-up" data-aos-delay="200">
+<br>
 <div class="container">
     <br>
   
-  <h1>Edit Details</h1>
+  <h1><u>Edit Details</u></h1>
   <br>
   <form class="" action="" method="post">
     
@@ -22,8 +24,10 @@
       
     </p>
     <br>
-    <p><input class="btn btn-primary" id="submit" name="submit" style="height : 50px;" type="submit" value="Save Changes"></p>
+    <p><input class="btn btn-primary btn-pill" id="submit" name="submit" style="height : 50px;" type="submit" value="Save Changes"></p>
 </form>
 </div>
+</div>
+<br>
 
 {%endblock%}
