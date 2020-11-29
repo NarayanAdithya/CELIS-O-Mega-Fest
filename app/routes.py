@@ -1,5 +1,5 @@
 
-from app import app,forms,db,socketio,mail
+from app import app,forms,db,socketio
 from flask_socketio import emit,leave_room,join_room
 from flask import request,redirect,url_for,render_template,flash,get_flashed_messages,flash,jsonify
 from flask_login import current_user,login_user,logout_user,login_required
@@ -10,6 +10,14 @@ from wtforms.validators import ValidationError
 from datetime import datetime
 import pickle
 
+
+
+
+
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template('celis.html',title='Home',data_footer_aos="fade-left",data_aos_footer_delay=100,data_aos_header="fade-left",data_header_aos_delay=100)
 
 
 @app.route('/course/<course_code>/students')
@@ -95,6 +103,15 @@ def add_course():
         return render_template('add_course.html',form=form)
     else:
         return redirect(url_for('profile',username=current_user.username))
+
+
+@app.route('/contact')
+@login_required
+def contactus():
+    return render_template('contactus.html',title='Contact Us')
+
+
+
 
 
 @app.route('/courses')
