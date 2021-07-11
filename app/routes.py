@@ -16,7 +16,7 @@ import numpy as np
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('celis.html',title='Home',data_footer_aos="fade-left",data_aos_footer_delay=100,data_aos_header="fade-left",data_header_aos_delay=100)
+    return render_template('celis.html',title='New Home',data_footer_aos="fade-left",data_aos_footer_delay=100,data_aos_header="fade-left",data_header_aos_delay=100)
 
 @app.errorhandler(404)
 def not_found_error(error):
