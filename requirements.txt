@@ -3,12 +3,12 @@ click==7.1.2
 dnspython==1.16.0
 ecdsa==0.13
 email-validator
-eventlet
+eventlet==0.25.1
 Flask==1.1.2
 Flask-Compress==1.5.0
 Flask-Login==0.5.0
 Flask-Migrate
-Flask-SocketIO
+Flask-SocketIO==4.2.1
 Flask-SQLAlchemy
 Flask-WTF
 Flask-Mail
@@ -16,7 +16,7 @@ future
 gevent
 gunicorn
 gevent-websocket
-greenlet
+greenlet==0.4.15
 idna
 itsdangerous
 Jinja2
@@ -26,8 +26,8 @@ pycparser
 pycryptodome
 python-dateutil
 python-editor
-python-engineio
-python-socketio
+python-engineio==3.11.2
+python-socketio==4.4.0
 retrying
 six
 SQLAlchemy
