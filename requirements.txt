@@ -36,3 +36,5 @@ wincertstore
 WTForms
 zope.event
 zope.interface
+pandas
+numpy
