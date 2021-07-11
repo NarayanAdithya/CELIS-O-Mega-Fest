@@ -16,7 +16,7 @@ future
 gevent
 gunicorn
 gevent-websocket
-greenlet==0.4.15
+greenlet
 idna
 itsdangerous
 Jinja2
