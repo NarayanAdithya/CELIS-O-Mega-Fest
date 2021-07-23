@@ -17,6 +17,7 @@ gevent
 gunicorn
 gevent-websocket
 greenlet
+gensim
 idna
 itsdangerous
 Jinja2
