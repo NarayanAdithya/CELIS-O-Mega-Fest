@@ -17,8 +17,7 @@ gevent
 gunicorn
 gevent-websocket
 greenlet
-gensim
-idna
+gensim==3.8.3
 itsdangerous
 Jinja2
 Mako
