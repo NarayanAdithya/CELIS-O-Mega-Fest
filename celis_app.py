@@ -1,5 +1,6 @@
 from app import app,db,socketio
-from app.models import User,thread,post,Courses,enrolled
+from app.models import thread,post,Courses
+from app.auth.models import User
 
 
 # Flask Shell Command Gives Access to DataBase Manipulation Facilated Through Flask SQLAlchemy

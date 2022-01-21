@@ -1,3 +1,4 @@
+from sys import prefix
 from flask import Flask
 from config import config
 from flask_sqlalchemy import SQLAlchemy
@@ -39,5 +40,8 @@ if not app.debug:
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
+from app.auth import auth
+
+app.register_blueprint(auth, url_prefix='/auth')
 
 from app import routes,models

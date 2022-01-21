@@ -1,17 +1,18 @@
 from app import app,forms,db,socketio,mail
 from flask_socketio import emit,leave_room,join_room
-from flask import request,redirect,url_for,render_template,flash,get_flashed_messages,flash,jsonify
-from flask_login import current_user,login_user,logout_user,login_required
-from app.models import User,thread,post,Courses,enrolled
-from app.forms import LoginForm,RegisterForm,add_course_form,RequestResetForm, ResetPasswordForm
+from flask_login import current_user,login_required
+from flask import render_template, redirect, url_for, get_flashed_messages, flash, request
+from app.models import thread,post,Courses,enrolled
+from app.auth.models import User
+from app.forms import add_course_form
 from werkzeug.urls import url_parse
 from wtforms.validators import ValidationError
-from datetime import datetime
-import pickle
 from flask_mail import Message
 from threading import Thread
+import pickle
 import pandas as pd
 import numpy as np
+from app.utils import send_async_email
 
 @app.route('/')
 @app.route('/index')
@@ -112,9 +113,6 @@ def add_course():
     else:
         return redirect(url_for('profile',username=current_user.username))
 
-def send_async_email(app,msg):
-    with app.app_context():
-        mail.send(msg)
 
 
 @app.route('/courses')
@@ -198,14 +196,6 @@ def remove(coursecode):
     else:    
         return redirect(url_for('profile',username=current_user.username))
 
-
-@app.route('/logout')
-def logout():
-    current_user.last_seen=datetime.utcnow()
-    db.session.commit()
-    logout_user()
-    return redirect(url_for('index'))
-
 @app.route('/edit_profile',methods=['POST','GET'])
 @login_required
 def edit_profile():
@@ -230,52 +220,10 @@ def edit_profile():
         return redirect(url_for('index'))
 
 
-
-@app.route('/login',methods=['GET','POST'])
-def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form=LoginForm()
-    if form.validate_on_submit():
-        user=User.query.filter_by(email=form.email.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid Email or Password',category="danger")
-            return redirect(url_for('login'))
-        login_user(user,remember=form.remember_me.data)
-        next_page=request.args.get('next')
-        if not next_page or url_parse(next_page).netloc!='':
-            next_page=url_for('index')
-        return redirect(next_page)
-    return render_template('signinpage.html',title='SignIn',form=form)
-
-
-
 @app.route('/basetemplate')
 def base():
     return render_template('template.html',title='template')
 
-
-@app.route('/register',methods=['POST','GET'])
-def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form=forms.RegisterForm()
-    if form.validate_on_submit():
-        user=User(username=form.username.data,email=form.email.data,user_role=form.user_role.data,Region=form.Region.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Successfully Registered',category="success")
-        msg = Message('Welcome to CELIS',
-                  sender="celis.students@gmail.com",
-                  recipients=[user.email])
-        msg.body="Hey There, We are happy that you have decided to join our community, We look forward to working with you. If you have any issues do notify us in our contact us section"
-        Thread(target=send_async_email,args=(app,msg)).start()
-        print(form.password.data)
-        print(form.user_role.data)
-        print(form.Region.data)
-        return redirect(url_for('login'))
-    return render_template('signuppage.html',form=form,title='Register')
 
 @app.route('/forum')
 @login_required
@@ -290,55 +238,10 @@ def forum_(thread_id):
         thread_name=thread.query.filter_by(id=thread_id).first().subject
         return render_template('forum.html',title='Forum',posts=posts,room=thread_name)
 
-
-
-
 @app.route('/contact')
 @login_required
 def contactus():
     return render_template('contactus.html',title='Contact Us')
-
-def send_reset_email(user):
-    token = user.get_reset_token()
-    msg = Message('Password Reset Request',
-                  sender="celis.students@gmail.com",
-                  recipients=[user.email])
-    msg.body = f'''To reset your password, visit the following link:
-{url_for('reset_token', token=token, _external=True)}
-If you did not make this request then simply ignore this email and no changes will be made.
-'''
-    mail.send(msg)
-
-@app.route("/reset_password", methods=['GET', 'POST'])
-def reset_request():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form = RequestResetForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        send_reset_email(user)
-        flash('An email has been sent with instructions to reset your password.', 'info')
-        return redirect(url_for('login'))
-    return render_template('reset_request.html', title='Reset Password', form=form)
-
-@app.route("/reset_password/<token>", methods=['GET', 'POST'])
-def reset_token(token):
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    user = User.verify_reset_token(token)
-    if user is None:
-        flash('That is an invalid or expired token', 'warning')
-        return redirect(url_for('reset_request'))
-    form = ResetPasswordForm()
-    if form.validate_on_submit():
-        
-        password=(form.password.data)
-        user.set_password(form.password.data)
-        db.session.commit()
-        flash('Your password has been updated! You are now able to log in', 'success')
-        return redirect(url_for('login'))
-    return render_template('reset_token.html', title='Reset Password', form=form)
-
 
 #socket events
 

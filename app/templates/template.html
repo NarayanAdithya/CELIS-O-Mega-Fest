@@ -74,11 +74,11 @@ body  {
             </li>
             {% if current_user.is_anonymous %}
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('login')}}">SignIn/SignUp</a>
+              <a class="nav-link" href="{{url_for('auth.login')}}">SignIn/SignUp</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('logout')}}">SignOut</a>
+              <a class="nav-link" href="{{url_for('auth.logout')}}">SignOut</a>
             </li>
             {% endif %}
             {% if current_user.is_authenticated %}
@@ -120,84 +120,6 @@ body  {
  {% endblock %}
  
  
- <!-- <footer >
-      <div class="container-fluid text-center" style="background-image: linear-gradient(to right, #a517ba,#5f1782;font-weight: 5;">
-        <div class="py-4">
-          <h2 class="text-light" style="font-family:  
-Segoe UI;">Interested in working with us?</h2>
-          <button
-            class="btn btn-outline-light btn-lg mt-2" 
-            onclick="window.location.href='{{url_for('contactus')}}';" style="font-family:  
-Segoe UI;"
-          >
-            Let's talk!
-          </button>
-        </div>
-        <div class="row" style="font-family:  
-Segoe UI;">
-
-          <div class="col-12 col-md-4 py-2">
-            <h5 class="text-info pb-3">Personal</h5>
-            {%if current_user.is_authenticated%}
-            <a href="{{url_for('forum')}}" class="text-light d-block"><i class="fa fa-align-left text-light"></i> Forum</a>
-            <a href="{{url_for('profile',username=current_user.username)}}" class="text-light d-block"><i class="fa fa-user text-light"></i> Profile</a>
-            <a href="#courses-section" class="text-light d-block">About Us!</a>
-            <a href="{{url_for('course')}}" class="text-light d-block"><i class="fa fa-university text-light"></i> Courses</a>
-           {%else%}
-           <a href="{{url_for('login')}}" class="text-light d-block"><i class="fa fa-align-left text-light"></i> Forum</a>
-           <a href="{{url_for('login')}}" class="text-light d-block"><i class="fa fa-user text-light"></i> Profile</a>
-           <!--<a href="#courses-section" class="text-light d-block">About Us!</a>
-           <a href="{{url_for('login')}}" class="text-light d-block"><i class="fa fa-university text-light"></i> Courses</a>
-           
-           {%endif%}  
-           
-
-          </div>
-          <div class="col-12 col-md-4 py-2">
-            <h5 class="text-info pb-3">Get in touch!</h5>
-            <a href="https://mail.google.com/mail" class="text-light d-block"><i class="fa fa-envelope text-light"></i> Mail Us</a>
-            <a href="{{url_for('contactus')}}" class="text-light d-block"><i class="fa fa-phone text-light"></i> Contact us</a>
-            <a href="{{url_for('contactus')}}" class="text-light">
-                      Write a recommendation <i class="fa fa-heart text-light"></i>
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 py-2">
-            <h5 class="text-info pb-3">Social</h5>
-            <a
-              href="https://www.linkedin.com/in/aravind-harinarayanan-285492189/"
-            >
-              <i class="fa fa-linkedin text-light h1 d-block"></i>
-            </a>
-            <a href="https://github.com/AravindHari">
-              <i class="fa fa-github text-light h1 d-block"></i>
-            </a>
-            <a href="https://www.instagram.com/aravind_hari1/">
-              <i class="fa fa-instagram text-light h1 d-block"></i>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100005545604764">
-              <i class="fa fa-facebook text-light h1 d-block"></i>
-            </a>
-          </div>
-        </div>
-</div>
-        
-        <div class="footer-copyright text-center py-3" style="background-color:#CACFD2;border-style: solid;border-width: 5px;border-color: grey ">
-          
-          <p style="font-weight: bold;"> © 2020 Copyright:<a href="https://mdbootstrap.com/" class="text-info"> CELIS </a></p>
-          <a href="{{url_for('index')}}" ><img src="{{url_for('static',filename='images/home/shortlogo.png')}}" width="110" height="60" style="position: fixed;
-  bottom: 0;
-  right: 0;
-  margin-right: 20px;
-  margin-bottom: 39px;
-  
-  "></a>
-         
-                      
-         </div>
-      
-    </footer>
-               Footer -->
                <footer >
       <div class="container-fluid text-center" style="background-color: #1c1c1c;font-weight: 5;">
         <div class="py-4">
