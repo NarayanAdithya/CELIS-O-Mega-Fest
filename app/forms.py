@@ -2,7 +2,7 @@
 
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,BooleanField,SubmitField,RadioField,SelectField,TextAreaField
-from wtforms.fields.html5 import EmailField,URLField,DateField
+from wtforms.fields import EmailField,URLField,DateField
 from wtforms.validators import DataRequired,Email,EqualTo,ValidationError,URL,Length
 from app.models import User,Courses
 from flask_login import current_user,login_user,logout_user,login_required
