@@ -83,7 +83,7 @@ body  {
             {% endif %}
             {% if current_user.is_authenticated %}
             <li class="nav-item">
-            <a class="nav-link" href="{{url_for('auth.profile',username=current_user.username)}}" >
+            <a class="nav-link" href="{{url_for('profile',username=current_user.username)}}" >
             Hey, {{current_user.username}}
           </a>
     </li>
@@ -119,7 +119,7 @@ body  {
 
  {% endblock %}
  
-
+ 
                <footer >
       <div class="container-fluid text-center" style="background-color: #1c1c1c;font-weight: 5;">
         <div class="py-4">
@@ -127,7 +127,7 @@ body  {
 Segoe UI;">Interested in working with us?</h2>
           <button
             class="btn btn-outline-light btn-lg mt-2" 
-            onclick="window.location.href='{{url_for('home.contactus')}}';" style="font-family:  
+            onclick="window.location.href='{{url_for(\'home.contactus\')}}';" style="font-family:  
 Segoe UI;"
           >
             Let's talk!
@@ -139,7 +139,7 @@ Segoe UI;">
           <div class="col-12 col-md-4 py-2">
             <h5 class="text-info pb-3">Personal</h5>
             <a href="{{url_for('forum.forum_home')}}" class="text-light d-block"><i class="fa fa-align-left text-light"></i> Forum</a>
-            <a href="{{url_for('auth.profile',username=current_user.username)}}" class="text-light d-block"><i class="fa fa-user text-light"></i> Profile</a>
+            <a href="{{url_for('profile',username=current_user.username)}}" class="text-light d-block"><i class="fa fa-user text-light"></i> Profile</a>
             <!--<a href="#courses-section" class="text-light d-block">About Us!</a>-->
             <a href="{{url_for('course.courses')}}" class="text-light d-block"><i class="fa fa-university text-light"></i> Courses</a>
              

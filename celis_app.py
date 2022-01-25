@@ -1,5 +1,6 @@
 from app import app,db,socketio
-from app.models import thread,post,Courses
+from app.forum.models import thread,post
+from app.course.models import Courses
 from app.auth.models import User
 
 
@@ -10,4 +11,4 @@ def make_shell_context():
 
 
 if __name__ == '__main__':
-    socketio.run(app,log_output=True,)
+    socketio.run(app,debug=True,log_output=True,)
