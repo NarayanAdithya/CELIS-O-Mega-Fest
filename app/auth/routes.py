@@ -17,7 +17,7 @@ def logout():
     current_user.last_seen=datetime.utcnow()
     db.session.commit()
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('home.index'))
 
 
 
